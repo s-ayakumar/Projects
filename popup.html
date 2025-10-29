@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chroma-Shift</title>
+    <!-- The Tailwind CDN link was removed to comply with Content Security Policy -->
+    <style>
+        /* Sets the size and base styling for the popup window */
+        body {
+            width: 280px;
+            height: 150px;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            padding: 1rem;
+            /* Replicating previous Tailwind layout classes */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem; /* Replaces space-y-4 */
+        }
+
+        h1 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 700; /* font-bold */
+            color: #1f2937; /* text-gray-800 */
+        }
+
+        p {
+            font-size: 0.875rem; /* text-sm */
+            color: #4b5563; /* text-gray-600 */
+        }
+
+        #colorChangeButton {
+            /* Replicating previous Tailwind button styling */
+            width: 100%;
+            max-width: 20rem; /* max-w-xs (approx) */
+            padding: 0.5rem 1rem; /* px-4 py-2 */
+            font-weight: 600; /* font-semibold */
+            color: #ffffff; /* text-white */
+            background-color: #4f46e5; /* bg-indigo-600 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+            transition: background-color 200ms ease-in-out; /* transition duration-200 */
+            border: none;
+            cursor: pointer;
+        }
+
+        #colorChangeButton:hover {
+            background-color: #4338ca; /* hover:bg-indigo-700 */
+        }
+        
+        #colorChangeButton:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #6366f1; /* focus:ring-2 focus:ring-indigo-500 */
+        }
+
+        #colorChangeButton:active {
+            background-color: #3730a3; /* active:bg-indigo-800 */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Chroma-Shift</h1>
+    <p>Click to shift the page color!</p>
+    <button id="colorChangeButton">
+        Randomize Color
+    </button>
+
+    <!-- FIX: Logic is now loaded from a local file to comply with CSP -->
+    <script src="popup.js"></script> 
+</body>
+</html>
